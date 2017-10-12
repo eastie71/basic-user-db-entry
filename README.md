@@ -6,6 +6,7 @@ The form allows entry of the following fields:
 - Surname
 - Email
 - Password
+
 All validation is performed by the server in PHP.
 - All fields must be filled in
 - The Email address must be valid, and unique
