@@ -55,6 +55,7 @@
 					$query = "SELECT `id` FROM user WHERE `email` = '$email'";					
 					if ($result = mysqli_query($dblink, $query)) {
 						$row = mysqli_fetch_array($result);
+						// Use the Row ID as the SALT for the hashing of the password
 						$salt = $row['id'];
 						$password = md5(md5($salt).$password);
 						$query = "UPDATE `user` SET `password` = '$password' WHERE id = $salt LIMIT 1";
